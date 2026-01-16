@@ -100,4 +100,68 @@ nav {
 .nav-menu li a.active {
     color: #ffd700;
 }
+.dropdown {
+    position: relative;
+}
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.dropdown-toggle::after {
+    display: none !important;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0a1929;
+    list-style: none;
+    padding: 0.5rem 0;
+    border-radius: 8px;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+     display: block !important;
+    margin: 0 !important;
+    border: none !important;
+    inset: auto !important;
+}
+.dropdown:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown.active > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-menu li {
+    width: 100%;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 0.7rem 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.dropdown-menu li a::after {
+    display: none; /* Remove underline animation in dropdown */
+}
+.dropdown-menu li a:hover {
+    background: #1e3a5f;
+    color: #ffd700;
+    padding-left: 1.5rem;
+}
+
+.dropdown-menu li a.active {
+    color: #ffd700;
+}
 
