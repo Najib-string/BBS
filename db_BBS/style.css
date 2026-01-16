@@ -26,4 +26,31 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
 }
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1001;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0a1929;
+}
+
+.logo-text h1 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
 
