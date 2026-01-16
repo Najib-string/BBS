@@ -77,4 +77,27 @@ nav {
     font-family: inherit;
     padding: 0;
 }
+.nav-menu li a:hover,
+.nav-menu li button:hover {
+    color: #ffd700;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffd700;
+    transition: width 0.3s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.nav-menu li a.active {
+    color: #ffd700;
+}
 
