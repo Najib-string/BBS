@@ -110,4 +110,15 @@ ocument.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const menuLinks = document.querySelectorAll('.nav-menu a');
+    
+    menuLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+
 });    
