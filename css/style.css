@@ -558,3 +558,44 @@ footer {
         padding: 1.5rem;
     }
 }
+
+.page-beranda .hero {
+    background: linear-gradient(rgba(10, 25, 41, 0.85), rgba(10, 25, 41, 0.85)),
+                url('https://student-activity.binus.ac.id/himdkv/wp-content/uploads/sites/11/2021/08/mataram-cover.jpg') center/cover;
+}
+
+/* Program - Kegiatan Belajar Mengajar */
+.page-program .page-header {
+    background: linear-gradient(rgba(10, 25, 41, 0.85), rgba(10, 25, 41, 0.85)),
+                url('https://al-zamriyah.sch.id/wp-content/uploads/2022/09/160236085_912245006274993_6951317803576197709_n-600x450.jpg') center/cover;
+}
+
+/* Sejarah - Islamic Pattern Background */
+.page-sejarah {
+    background-image: url('https://www.radarbangsa.com/images/posts/1/2025/2025-10-14/f8c3252f3cbbfabcb447255e7a74638d.jpg');
+    background-color: #f8f9fa;
+}
+
+/* Kontak - Lokasi/Peta */
+.page-kontak .page-header {
+    background: linear-gradient(rgba(10,25,41,0.9), rgba(10,25,41,0.9)),
+                url('https://www.man2kotakediri.sch.id/wp-content/uploads/2021/07/10-Ruang-Tata-Usaha.jpg') center/cover;
+}
+
+/* Pendidikan - Buku & Ilmu Pengetahuan */
+.page-pendidikan .page-header {
+    background: linear-gradient(rgba(10, 25, 41, 0.85), rgba(10, 25, 41, 0.85)),
+                url('https://suaramuhammadiyah.id/storage/posts/image/Kitab-Kitab_Hadits-20231215085505.JPG') center/cover;
+}
+
+/* Visi Misi - Goals & Target */
+.page-pimpinan .hero {
+    background: linear-gradient(rgba(10, 25, 41, 0.85), rgba(10, 25, 41, 0.85)),
+                url('https://daaruttarmizi.id/upload/artikel/2023-10-25-IMG_20230910_163332.jpg') center/cover;
+}
+
+/* Pendaftaran - Clean gradient (no image for form page) */
+.page-pendaftaran .pendaftaran-section {
+    background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+                ;
+}
