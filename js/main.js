@@ -138,5 +138,66 @@ ocument.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            let firstInvalidField = null;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#ff4444';
+                    
+                    if (!firstInvalidField) {
+                        firstInvalidField = field;
+                    }
+                    
+                    // Reset border after 3 seconds
+                    setTimeout(() => {
+                        field.style.borderColor = '';
+                    }, 3000);
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+            
+            if (!isValid) {
+                e.preventDefault();
+                alert('Mohon lengkapi semua field yang wajib diisi!');
+                
+                // Focus on first invalid field
+                if (firstInvalidField) {
+                    firstInvalidField.focus();
+                }
+            }
+        });
+        
+        // Real-time validation feedback
+        const requiredFields = form.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+            field.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.style.borderColor = '#ff4444';
+                } else {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+            
+            field.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+        });
+    });
+
+
+
+
+
+
 
 });    
