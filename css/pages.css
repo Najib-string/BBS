@@ -1,0 +1,85 @@
+.page-header {
+    margin-top: 80px;
+    background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+    padding: 4rem 5%;
+    text-align: center;
+    color: white;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.program-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(10, 25, 41, 0.2);
+}
+
+.program-icon {
+    background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.program-content {
+    padding: 2rem;
+}
+
+.program-content h3 {
+    color: #0a1929;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.program-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.program-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.program-content ul li {
+    color: #555;
+    padding: 0.6rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.program-content ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
