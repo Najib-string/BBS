@@ -565,3 +565,64 @@
     color: #0a1929;
     font-weight: 500;
 }
+
+@media (max-width: 768px) {
+    /* Program */
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .schedule-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* Sejarah */
+    .history-card {
+        padding: 40px 25px;
+    }
+    
+    .page-title {
+        font-size: 32px;
+    }
+    
+    .history-body {
+        font-size: 17px;
+    }
+    
+    .first-letter::first-letter {
+        font-size: 60px;
+        line-height: 50px;
+    }
+    
+    /* Kontak */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .whatsapp-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Pendidikan */
+    .education-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .history-card {
+        padding: 40px 25px;
+    }
+    .page-title {
+        font-size: 32px;
+    }
+    .history-body {
+        font-size: 17px;
+    }
+    .first-letter::first-letter {
+        font-size: 60px;
+        line-height: 50px;
+    }
+}
