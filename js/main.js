@@ -217,6 +217,18 @@ ocument.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    if (document.body.classList.contains('page-pendaftaran')) {
+        // Ensure Bootstrap doesn't interfere with custom dropdown
+        const bsDropdowns = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+        bsDropdowns.forEach(el => {
+            el.removeAttribute('data-bs-toggle');
+        });
+    }
+
+
+
+
+
 
 
 
