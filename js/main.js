@@ -225,7 +225,24 @@ ocument.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    console.log('✅ Babussalam Website Initialized Successfully!');
+    console.log('📌 Version: 3.0 - Clean & Structured');
 
+
+    // ===============================
+    // PROGRAM ACCORDION (TAMBAHAN BARU)
+    // ===============================
+    
+    // Fungsi ini dipanggil saat tombol + diklik
+    window.toggleDefinition = function(element) {
+        // Cari elemen induk (li.program-item)
+        const parentItem = element.closest('.program-item');
+        
+        if (parentItem) {
+            // Tambah/Hapus class 'active' untuk memunculkan isi
+            parentItem.classList.toggle('active');
+        }
+    };
 
 
 
