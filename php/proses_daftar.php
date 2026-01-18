@@ -33,3 +33,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $asal_sekolah = mysqli_real_escape_string($koneksi, $_POST['asal_sekolah']);
     $tahun_lulus  = mysqli_real_escape_string($koneksi, $_POST['tahun_lulus']);
     $alasan       = mysqli_real_escape_string($koneksi, $_POST['alasan_daftar']);
+
+    // =====================
+    // UPLOAD DOKUMEN
+    // =====================
+    $folder = "../uploads/dokumen/";
+
+    function uploadFile($file, $folder) {
+        if ($file['error'] === 0) {
+            $namaFile = time() . "_" . basename($file['name']);
+            $target   = $folder . $namaFile;
+            move_uploaded_file($file['tmp_name'], $target);
+            return $namaFile;
+        }
+        return null;
+    }
+
+    $kk             = uploadFile($_FILES['kk'], $folder);
+    $akta_kelahiran = uploadFile($_FILES['akta_kelahiran'], $folder);
+    $ktp_ortu       = uploadFile($_FILES['ktp_ortu'], $folder);
+    $ijazah         = uploadFile($_FILES['ijazah'], $folder);
+    $pas_foto       = uploadFile($_FILES['pas_foto'], $folder);
