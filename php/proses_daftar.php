@@ -54,3 +54,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ktp_ortu       = uploadFile($_FILES['ktp_ortu'], $folder);
     $ijazah         = uploadFile($_FILES['ijazah'], $folder);
     $pas_foto       = uploadFile($_FILES['pas_foto'], $folder);
+
+
+ // =====================
+    // STATUS DEFAULT
+    // =====================
+    $status = "proses";
+
+    // =====================
+    // QUERY INSERT
+    // =====================
+    $query = "INSERT INTO pendaftaran (
+        nama_lengkap,
+        no_hp,
+        alamat,
+        nik,
+        tempat_lahir,
+        tanggal_lahir,
+        jenis_kelamin,
+        email,
+        asal_sekolah,
+        tahun_lulus,
+        nama_ayah,
+        pekerjaan_ayah,
+        nama_ibu,
+        pekerjaan_ibu,
+        no_hp_ortu,
+        alasan_daftar,
+        kk,
+        akta_kelahiran,
+        ktp_ortu,
+        ijazah,
+        pas_foto,
+        status
+    ) VALUES (
+        '$nama_lengkap',
+        '$no_hp',
+        '$alamat',
+        '$nik',
+        '$tempat_lahir',
+        '$tanggal_lahir',
+        '$jenis_kelamin',
+        '$email',
+        '$asal_sekolah',
+        '$tahun_lulus',
+        '$nama_ayah',
+        '$pekerjaan_ayah',
+        '$nama_ibu',
+        '$pekerjaan_ibu',
+        '$no_hp_ortu',
+        '$alasan',
+        '$kk',
+        '$akta_kelahiran',
+        '$ktp_ortu',
+        '$ijazah',
+        '$pas_foto',
+        '$status'
+    )";
+
+    if (mysqli_query($koneksi, $query)) {
+        echo "<script>
+            alert('Pendaftaran berhasil! Data & dokumen tersimpan.');
+            window.location.href='../pendaftaran.html';
+        </script>";
+    } else {
+        echo "Error: " . mysqli_error($koneksi);
+    }
+
+} else {
+    echo "Akses tidak valid!";
+}   
