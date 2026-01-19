@@ -33,16 +33,17 @@ ini_set('display_errors', 1);
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
-        .logo-icon {
-            width: 70px;
-            height: 70px;
+        /* LOGO EMOJI */
+        .login-logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 15px;
             background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 15px;
+            font-size: 42px;
             color: #0a1929;
         }
 
@@ -74,7 +75,9 @@ ini_set('display_errors', 1);
 <body>
 
 <div class="login-card">
+
     <div class="login-logo">🕌</div>
+
     <h4 class="login-title">Login Admin</h4>
     <p class="login-subtitle">Pondok Pesantren Babussalam</p>
 
