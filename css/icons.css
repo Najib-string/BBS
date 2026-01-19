@@ -1,0 +1,226 @@
+/* ===============================
+   PONDOK PESANTREN BABUSSALAM
+   Professional Icons Replacement
+   =============================== */
+
+/* Ganti emoji logo dengan icon Font Awesome */
+.logo-icon {
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900;
+}
+
+.logo-icon::before {
+    content: '\f54d'; /* fa-mosque */
+}
+
+/* Icon Cards di Beranda */
+.card-icon.icon-book::before {
+    content: '\f02d'; /* fa-book */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.card-icon.icon-teacher::before {
+    content: '\f51c'; /* fa-chalkboard-teacher */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.card-icon.icon-building::before {
+    content: '\f19c'; /* fa-graduation-cap */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Program Icons */
+.program-icon.icon-quran::before {
+    content: '\f687'; /* fa-quran */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.program-icon.icon-book-reader::before {
+    content: '\f5da'; /* fa-book-reader */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.program-icon.icon-praying::before {
+    content: '\f683'; /* fa-praying-hands */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.program-icon.icon-mosque::before {
+    content: '\f54d'; /* fa-mosque */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Visi Misi Icons */
+.card-icon.icon-target::before {
+    content: '\f140'; /* fa-bullseye */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.card-icon.icon-list::before {
+    content: '\f0ae'; /* fa-tasks */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.card-icon.icon-trophy::before {
+    content: '\f091'; /* fa-trophy */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Nilai-nilai Icons */
+.value-icon.icon-hands::before {
+    content: '\f4c0'; /* fa-hands */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.value-icon.icon-star::before {
+    content: '\f005'; /* fa-star */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.value-icon.icon-muscle::before {
+    content: '\f5fc'; /* fa-dumbbell */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.value-icon.icon-handshake::before {
+    content: '\f2b5'; /* fa-handshake */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.value-icon.icon-lightbulb::before {
+    content: '\f0eb'; /* fa-lightbulb */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Pendaftaran Icons */
+.info-icon.icon-calendar::before {
+    content: '\f073'; /* fa-calendar */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.info-icon.icon-graduation::before {
+    content: '\f19d'; /* fa-graduation-cap */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.info-icon.icon-globe::before {
+    content: '\f0ac'; /* fa-globe */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.info-icon.icon-clock::before {
+    content: '\f017'; /* fa-clock */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Form Icons */
+.section-icon.icon-user::before {
+    content: '\f007'; /* fa-user */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.section-icon.icon-family::before {
+    content: '\f0c0'; /* fa-users */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.section-icon.icon-school::before {
+    content: '\f549'; /* fa-school */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.section-icon.icon-file::before {
+    content: '\f15b'; /* fa-file */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.section-icon.icon-pen::before {
+    content: '\f303'; /* fa-pen */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Button Icons */
+.btn-icon.icon-send::before {
+    content: '\f1d8'; /* fa-paper-plane */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+.btn-icon.icon-register::before {
+    content: '\f044'; /* fa-edit */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+/* Checkmark replacement */
+.checkmark::before {
+    content: '\f00c'; /* fa-check */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Arrow replacement */
+.arrow-icon::before {
+    content: '\f061'; /* fa-arrow-right */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Dropdown arrow */
+.dropdown-arrow::after {
+    content: '\f078'; /* fa-chevron-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+/* Toggle icon untuk accordion */
+.toggle-icon {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.toggle-icon::before {
+    content: '\f078'; /* fa-chevron-down */
+}
+
+.program-item.active .toggle-icon::before {
+    content: '\f077'; /* fa-chevron-up */
+}
+
+/* Ornament decorative */
+.ornament-footer {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.ornament-footer::before {
+    content: '\f7a4 \00a0 \f7a4 \00a0 \f7a4'; /* fa-star-and-crescent */
+}

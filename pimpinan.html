@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visi & Misi - Pondok Pesantren Babussalam</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+
+        /* ===============================
+   HERO VISI & MISI (PAKAI URL)
+   =============================== */
+.vision-hero {
+    margin-top: 80px;
+    min-height: 600px;
+
+    background:
+        linear-gradient(rgba(10,25,41,0.6), rgba(10,25,41,0.8)),
+        var(--hero-bg);
+
+    background-size: cover;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+    position: relative;
+}
+
+/* efek cahaya tengah (opsional tapi bagus) */
+.vision-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,215,0,0.18) 0%,
+            rgba(10,25,41,0.55) 45%,
+            rgba(10,25,41,0.85) 75%
+        );
+    z-index: 1;
+}
+
+/* teks di atas background */
+.vision-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+
+       
+
+        .vision-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vision-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vision-container {
+            max-width: 1400px;
+            margin: -80px auto 0;
+            padding: 0 5% 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .visi-card {
+            background: white;
+            border-radius: 40px;
+            padding: 5rem 4rem;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+        }
+
+        .visi-card::after {
+            content: '';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.03;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+        }
+
+        .visi-card h2 {
+            font-size: 3rem;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .visi-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #0a1929;
+        }
+
+        .visi-card p {
+            font-size: 1.3rem;
+            line-height: 2.2;
+            color: #4a5568;
+            text-align: justify;
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-text {
+            background: linear-gradient(120deg, #ffd700 0%, #ffed4e 100%);
+            padding: 3px 10px;
+            border-radius: 5px;
+            color: #0a1929;
+            font-weight: 600;
+        }
+
+        .misi-section {
+            background: white;
+            border-radius: 40px;
+            padding: 4rem;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .misi-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #0a1929, #1e3a5f);
+        }
+
+        .misi-section h2 {
+            font-size: 3rem;
+            color: #2d3748;
+            margin-bottom: 3rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .misi-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .misi-item {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 237, 78, 0.05));
+            border-radius: 25px;
+            padding: 2.5rem;
+            display: flex;
+            gap: 2rem;
+            align-items: start;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+        }
+
+        .misi-item:hover {
+            transform: translateX(15px);
+            border-color: #ffd700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 237, 78, 0.1));
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .misi-number {
+            min-width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0a1929;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .misi-content {
+            flex: 1;
+        }
+
+        .misi-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        .tujuan-section {
+            background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+            border-radius: 40px;
+            padding: 5rem 4rem;
+            color: white;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tujuan-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+        }
+
+        .tujuan-section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tujuan-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 3rem;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .tujuan-content p {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .tujuan-highlight {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px dashed rgba(255, 215, 0, 0.5);
+        }
+
+        .tujuan-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .values-section {
+            margin-top: 3rem;
+        }
+
+        .values-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 3rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 215, 0, 0.1) 100%);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover::before {
+            transform: translateY(0);
+        }
+
+        .value-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
+        }
+
+        .value-emoji {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            position: relative;
+            z-index: 2;
+            color: #ffd700;
+        }
+
+        .value-card h4 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .vision-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .visi-card, .misi-section, .tujuan-section {
+                padding: 3rem 2rem;
+            }
+
+            .visi-card h2, .misi-section h2, .tujuan-section h2 {
+                font-size: 2rem;
+            }
+
+            .misi-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .misi-number {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body class="page-pimpinan">
+
+<header>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="img/logo.png" alt="Logo Pondok Pesantren Babussalam">    
+            </div>
+            <div class="logo-text">
+                <h1>Pondok Pesantren Babussalam</h1>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li class="dropdown">
+                <button class="dropdown-toggle" type="button">
+                    Profil ▾
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="pendidikan.html">Sistem Pendidikan</a></li>
+                    <li><a href="pimpinan.html">Visi & Misi</a></li>
+                </ul>
+            </li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<section class="vision-hero"
+    style="--hero-bg: url('https://daaruttarmizi.id/upload/artikel/2023-10-25-IMG_20230910_163332.jpg');">
+    <div class="hero-content">
+        <h1>Visi & Misi</h1>
+        <p>Arah dan Tujuan Pondok Pesantren Babussalam dalam Mencetak Generasi Qurani</p>
+    </div>
+</section>
+
+
+<main class="vision-container">
+
+    <div class="visi-card">
+        <h2>
+            <div class="visi-icon"><i class="fas fa-bullseye"></i></div>
+            Visi Kami
+        </h2>
+        <p>
+            Terwujudnya <span class="highlight-text">generasi Qurani</span> yang beriman, berilmu, berakhlakul karimah, dan mampu berkontribusi positif bagi umat dan bangsa, serta menjadi <span class="highlight-text">kader pemimpin</span> yang bertaqwa kepada Allah SWT dalam menghadapi tantangan zaman dengan tetap berpegang teguh pada nilai-nilai Islam yang rahmatan lil 'alamin.
+        </p>
+    </div>
+
+    <div class="misi-section">
+        <h2>
+            <i class="fas fa-rocket" style="color: #ffd700;"></i>
+            Misi Kami
+        </h2>
+        <div class="misi-grid">
+            <div class="misi-item">
+                <div class="misi-number">1</div>
+                <div class="misi-content">
+                    <p>Menyelenggarakan pendidikan Islam yang terpadu antara ilmu agama dan ilmu umum dengan metode pembelajaran modern yang inovatif dan berbasis teknologi.</p>
+                </div>
+            </div>
+
+            <div class="misi-item">
+                <div class="misi-number">2</div>
+                <div class="misi-content">
+                    <p>Membentuk karakter santri yang disiplin, mandiri, dan bertanggung jawab melalui sistem pendidikan berasrama dengan pengawasan dan pembinaan 24 jam.</p>
+                </div>
+            </div>
+
+            <div class="misi-item">
+                <div class="misi-number">3</div>
+                <div class="misi-content">
+                    <p>Menanamkan nilai-nilai keislaman dalam kehidupan sehari-hari santri berdasarkan Al-Quran dan Sunnah dengan pendekatan yang moderat dan rahmatan lil 'alamin.</p>
+                </div>
+            </div>
+
+            <div class="misi-item">
+                <div class="misi-number">4</div>
+                <div class="misi-content">
+                    <p>Mengembangkan potensi santri dalam bidang akademik dan non-akademik untuk menghadapi tantangan global dengan tetap menjaga jati diri sebagai muslim yang taat.</p>
+                </div>
+            </div>
+
+            <div class="misi-item">
+                <div class="misi-number">5</div>
+                <div class="misi-content">
+                    <p>Membangun kerjasama dengan berbagai pihak dalam rangka meningkatkan kualitas pendidikan dan memperluas jaringan untuk masa depan santri yang lebih cerah.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tujuan-section">
+        <h2>
+            <i class="fas fa-trophy"></i>
+            Tujuan Pendidikan
+        </h2>
+        <div class="tujuan-content">
+            <p>
+                Menghasilkan lulusan yang memiliki pemahaman agama yang kuat, wawasan luas, serta siap menghadapi tantangan zaman dengan tetap berpegang pada nilai-nilai Islam yang universal dan rahmatan lil 'alamin.
+            </p>
+            <div class="tujuan-highlight">
+                <h3><i class="fas fa-star"></i> Ulama'ul 'Amilin Imamal Muttaqin <i class="fas fa-star"></i></h3>
+                <p style="margin: 0; font-size: 1.1rem;">
+                    Mencetak ulama yang berilmu dan beramal serta menjadi imam yang bertaqwa, yang mampu menjadi pemimpin dan panutan bagi masyarakat dalam segala aspek kehidupan.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="values-section">
+        <h2>
+            <i class="fas fa-star" style="color: #ffd700;"></i>
+            Nilai-Nilai Pondok Pesantren
+        </h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="value-emoji"><i class="fas fa-hands-praying"></i></span>
+                <h4>Keikhlasan</h4>
+                <p>Mengabdi dengan tulus karena Allah dalam setiap langkah tanpa mengharap imbalan duniawi</p>
+            </div>
+
+            <div class="value-card">
+                <span class="value-emoji"><i class="fas fa-seedling"></i></span>
+                <h4>Kesederhanaan</h4>
+                <p>Hidup sederhana penuh berkah, jauh dari sifat boros dan bermewah-mewahan</p>
+            </div>
+
+            <div class="value-card">
+                <span class="value-emoji"><i class="fas fa-user-graduate"></i></span>
+                <h4>Kemandirian</h4>
+                <p>Mandiri dalam segala hal, tidak bergantung pada orang lain dalam kehidupan</p>
+            </div>
+
+            <div class="value-card">
+                <span class="value-emoji"><i class="fas fa-handshake"></i></span>
+                <h4>Ukhuwah Islamiyah</h4>
+                <p>Membangun persaudaraan yang kuat sesama muslim dalam bingkai Islam</p>
+            </div>
+
+            <div class="value-card">
+                <span class="value-emoji"><i class="fas fa-brain"></i></span>
+                <h4>Kebebasan Berpikir</h4>
+                <p>Berlandaskan Al-Quran & Sunnah dengan pendekatan yang moderat dan terbuka</p>
+            </div>
+
+            <div class="value-card">
+                <span class="value-emoji"><i class="fas fa-book-open"></i></span>
+                <h4>Keilmuan</h4>
+                <p>Mengutamakan ilmu sebagai bekal kehidupan dunia dan akhirat</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Pondok Pesantren Babussalam. All Rights Reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

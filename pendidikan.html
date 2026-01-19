@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pendidikan - Pondok Pesantren Babussalam</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+
+        /* ===============================
+   HERO SISTEM PENDIDIKAN (SAMA SEPERTI SEJARAH)
+   =============================== */
+.page-pendidikan .edu-hero {
+    margin-top: 80px;
+    min-height: 600px;
+
+    background:
+        linear-gradient(rgba(10,25,41,0.6), rgba(10,25,41,0.8)),
+        url('https://suaramuhammadiyah.id/storage/posts/image/Kitab-Kitab_Hadits-20231215085505.JPG');
+
+    background-size: cover;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+    position: relative;
+}
+
+/* efek cahaya tengah */
+.page-pendidikan .edu-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,215,0,0.18) 0%,
+            rgba(10,25,41,0.55) 45%,
+            rgba(10,25,41,0.85) 75%
+        );
+    z-index: 1;
+}
+
+/* teks di atas overlay */
+.page-pendidikan .edu-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.page-pendidikan .edu-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-pendidikan .edu-hero p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+}
+
+
+        
+        .edu-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .edu-hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+
+        .edu-container {
+            max-width: 1400px;
+            margin: -60px auto 0;
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #0a1929;
+            margin-bottom: 1.5rem;
+            transform: rotate(-5deg);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotate(0deg) scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .method-section {
+            background: white;
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        .method-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .method-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            border-radius: 10px;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .method-item {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 237, 78, 0.05));
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .method-item:hover {
+            border-color: #ffd700;
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 237, 78, 0.1));
+        }
+
+        .method-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0a1929;
+        }
+
+        .method-item h4 {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .asrama-section {
+            background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+            border-radius: 30px;
+            padding: 4rem;
+            color: white;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .asrama-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+        }
+
+        .asrama-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .asrama-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .asrama-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .asrama-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-10px);
+            border-color: #ffd700;
+        }
+
+        .asrama-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: #ffd700;
+        }
+
+        .asrama-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .asrama-card p {
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0a1929, #1e3a5f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .edu-hero h1 {
+                font-size: 2rem;
+            }
+
+            .method-section, .asrama-section {
+                padding: 2.5rem 2rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="page-pendidikan">
+
+<header>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="img/logo.png" alt="Logo Pondok Pesantren Babussalam">    
+            </div>
+            <div class="logo-text">
+                <h1>Pondok Pesantren Babussalam</h1>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li class="dropdown">
+                <button class="dropdown-toggle" type="button">
+                    Profil ▾
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="pendidikan.html">Sistem Pendidikan</a></li>
+                    <li><a href="pimpinan.html">Visi & Misi</a></li>
+                </ul>
+            </li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<section class="edu-hero">
+    <div class="hero-content">
+        <h1>Sistem Pendidikan Terpadu</h1>
+        <p>Memadukan Ilmu Agama dan Umum untuk Menghasilkan Generasi Unggul</p>
+    </div>
+</section>
+
+
+<main class="edu-container">
+
+    <div class="stats-section">
+        <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Santri Aktif</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Tenaga Pengajar</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Pembinaan</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Mata Pelajaran</div>
+        </div>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-book-quran"></i>
+            </div>
+            <h3>Kurikulum Terpadu</h3>
+            <p>Menggabungkan pendidikan agama Islam dan ilmu umum secara seimbang</p>
+            <ul class="feature-list">
+                <li>Al-Qur'an & Tahfidz</li>
+                <li>Hadits & Fiqih</li>
+                <li>Bahasa Arab & Inggris</li>
+                <li>Matematika & Sains</li>
+                <li>Ilmu Sosial</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>Tenaga Pengajar Kompeten</h3>
+            <p>Guru berpengalaman dari berbagai perguruan tinggi dan pesantren</p>
+            <ul class="feature-list">
+                <li>Lulusan Universitas Ternama</li>
+                <li>Pengalaman Mengajar 5+ Tahun</li>
+                <li>Tinggal di Asrama</li>
+                <li>Pengawasan Full Time</li>
+                <li>Metode Modern & Salaf</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-building-columns"></i>
+            </div>
+            <h3>Fasilitas Lengkap</h3>
+            <p>Sarana dan prasarana yang mendukung proses pembelajaran optimal</p>
+            <ul class="feature-list">
+                <li>Ruang Kelas Ber-AC</li>
+                <li>Perpustakaan Digital</li>
+                <li>Asrama Nyaman</li>
+                <li>Masjid Luas</li>
+                <li>Laboratorium Komputer</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="method-section">
+        <h2>
+            <i class="fas fa-graduation-cap" style="color: #ffd700;"></i>
+            Metode Pembelajaran
+        </h2>
+        <div class="method-grid">
+            <div class="method-item">
+                <div class="method-number">1</div>
+                <h4>Sorogan</h4>
+                <p>Pembelajaran individual santri dengan guru</p>
+            </div>
+            <div class="method-item">
+                <div class="method-number">2</div>
+                <h4>Bandongan</h4>
+                <p>Pembelajaran klasikal dengan membaca kitab</p>
+            </div>
+            <div class="method-item">
+                <div class="method-number">3</div>
+                <h4>Halaqah</h4>
+                <p>Diskusi kelompok tematik</p>
+            </div>
+            <div class="method-item">
+                <div class="method-number">4</div>
+                <h4>Praktik</h4>
+                <p>Pembelajaran berbasis praktik langsung</p>
+            </div>
+            <div class="method-item">
+                <div class="method-number">5</div>
+                <h4>Digital</h4>
+                <p>Multimedia dan teknologi modern</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="asrama-section">
+        <h2>
+            <i class="fas fa-home"></i>
+            Sistem Asrama
+        </h2>
+        <p style="font-size: 1.15rem; margin-bottom: 3rem; opacity: 0.95;">
+            Santri dibina dalam lingkungan asrama untuk membentuk karakter unggul dan disiplin tinggi
+        </p>
+        <div class="asrama-grid">
+            <div class="asrama-card">
+                <i class="fas fa-user-check"></i>
+                <h4>Kemandirian</h4>
+                <p>Melatih santri untuk mandiri dalam kehidupan sehari-hari</p>
+            </div>
+            <div class="asrama-card">
+                <i class="fas fa-clock"></i>
+                <h4>Disiplin Waktu</h4>
+                <p>Pembiasaan disiplin waktu dalam setiap aktivitas</p>
+            </div>
+            <div class="asrama-card">
+                <i class="fas fa-users"></i>
+                <h4>Ukhuwah</h4>
+                <p>Membangun persaudaraan yang kuat antar santri</p>
+            </div>
+            <div class="asrama-card">
+                <i class="fas fa-leaf"></i>
+                <h4>Kesederhanaan</h4>
+                <p>Hidup sederhana penuh makna dan berkah</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Pondok Pesantren Babussalam. All Rights Reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

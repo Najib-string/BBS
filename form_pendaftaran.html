@@ -10,6 +10,9 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     
     <style>
         .nav-menu .dropdown-toggle::after { display: none !important; }
@@ -33,38 +36,53 @@
 
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <div class="logo-icon">🕌</div>
-            <div class="logo-text">
-                <h1>Pondok Pesantren Babussalam</h1>
+ <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="Logo Pondok Pesantren Babussalam">    
+                </div>
+                <div class="logo-text">
+                    <h1>Pondok Pesantren Babussalam</h1>
+                </div>
             </div>
-        </div>
 
-        <ul class="nav-menu">
-            <li><a href="index.html">Beranda</a></li>
-            <li class="dropdown">
-                <button class="dropdown-toggle">Profil ▾</button>
-                <ul class="dropdown-menu">
-                    <li><a href="sejarah.html">Sejarah</a></li>
-                    <li><a href="pendidikan.html">Sistem Pendidikan</a></li>
-                    <li><a href="pimpinan.html">Visi & Misi</a></li>
-                </ul>
-            </li>
-            <li><a href="program.html">Program</a></li>
-            <li><a href="pendaftaran.html">Pendaftaran</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-        </ul>
-    </nav>
-</header>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+
+                <li class="dropdown">
+                    <button class="dropdown-toggle" type="button">
+                        Profil ▾
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="pendidikan.html">Sistem Pendidikan</a></li>
+                        <li><a href="pimpinan.html">Visi & Misi</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="program.html">Program</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
 <section class="pendaftaran-section py-5">
     <div class="container">
         <div class="form-card p-4 shadow rounded">
 
             <div class="text-center mb-4">
-                <div class="logo-icon fs-1">🕌</div>
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="Logo Pondok Pesantren Babussalam">    
+                </div>
                 <h2>Pendaftaran Santri Baru</h2>
                 <p class="text-muted">Tahun Ajaran 2025/2026</p>
             </div>
@@ -73,7 +91,7 @@
             <form action="php/proses_daftar.php" method="POST" enctype="multipart/form-data">
 
                 <!-- DATA PRIBADI -->
-                <h5 class="text-primary mb-3">📋 Data Pribadi</h5>
+                <h5 class="text-primary mb-3"><i class="fa-solid fa-id-card me-2"></i> Data Pribadi</h5>
 
                 <div class="mb-3">
                     <label class="form-label">Nama Lengkap *</label>
@@ -124,7 +142,7 @@
                 <hr>
 
                 <!-- ORANG TUA -->
-                <h5 class="text-primary mb-3">👨‍👩‍👧 Data Orang Tua</h5>
+                <h5 class="text-primary mb-3"><i class="fa-solid fa-people-roof me-2"></i> Data Orang Tua</h5>
 
                 <div class="mb-3">
                     <label class="form-label">Nama Ayah *</label>
@@ -154,7 +172,7 @@
                 <hr>
 
                 <!-- PENDIDIKAN -->
-                <h5 class="text-primary mb-3">🎓 Pendidikan</h5>
+                <h5 class="text-primary mb-3"> <i class="fa-solid fa-user-graduate me-2"></i> Pendidikan</h5>
 
                 <div class="mb-3">
                     <label class="form-label">Asal Sekolah *</label>
@@ -169,7 +187,7 @@
                 <hr>
 
                 <!-- DOKUMEN -->
-                <h5 class="text-primary mb-3">📎 Dokumen Persyaratan</h5>
+                <h5 class="text-primary mb-3"><i class="fa-solid fa-paperclip me-2"></i> Dokumen Persyaratan</h5>
 
                 <div class="mb-3">
                     <label class="form-label">Kartu Keluarga (KK) *</label>
@@ -199,7 +217,7 @@
                 <hr>
 
                 <!-- ALASAN -->
-                <h5 class="text-primary mb-3">✍️ Alasan Mendaftar</h5>
+                <h5 class="text-primary mb-3"><i class="fa-solid fa-pen-to-square me-2"></i> Alasan Mendaftar</h5>
 
                 <div class="mb-4">
                     <textarea name="alasan_daftar" class="form-control" rows="4" required></textarea>
@@ -213,7 +231,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">
-                    📝 Daftar Sekarang
+                    <i class="fa-solid fa-file-signature me-2"></i> Daftar Sekarang
                 </button>
 
             </form>

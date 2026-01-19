@@ -1,21 +1,79 @@
-.page-header {
+/* ===================================
+   PONDOK PESANTREN BABUSSALAM
+   Page Specific Styles - Unified
+   All inline styles consolidated here
+   =================================== */
+
+/* ===================================
+   UNIFIED PAGE HEADER
+   All pages use this (except index)
+   =================================== */
+.page-header,
+.timeline-hero,
+.edu-hero,
+.vision-hero {
     margin-top: 80px;
+    min-height: 600px;
     background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
     padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
-.page-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.page-header::before,
+.timeline-hero::before,
+.edu-hero::before,
+.vision-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255,215,0,0.18) 0%,
+        rgba(10,25,41,0.55) 45%,
+        rgba(10,25,41,0.85) 75%
+    );
+    z-index: 1;
 }
 
-.page-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+.page-header h2,
+.timeline-hero h1,
+.edu-hero h1,
+.vision-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
 }
 
+.page-header p,
+.timeline-hero p,
+.edu-hero p,
+.vision-hero p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+/* ===================================
+   PROGRAM PAGE
+   =================================== */
 .program-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -29,7 +87,13 @@
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 0.6s ease-out backwards;
 }
+
+.program-card:nth-child(1) { animation-delay: 0.1s; }
+.program-card:nth-child(2) { animation-delay: 0.2s; }
+.program-card:nth-child(3) { animation-delay: 0.3s; }
+.program-card:nth-child(4) { animation-delay: 0.4s; }
 
 .program-card:hover {
     transform: translateY(-10px);
@@ -38,9 +102,29 @@
 
 .program-icon {
     background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
-    padding: 2.5rem;
+    padding: 2.5rem 0;
     text-align: center;
-    font-size: 4rem;
+    position: relative;
+}
+
+.program-icon::before {
+    content: "";
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffd700, #ffb700);
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.program-icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #0a1929;
+    z-index: 2;
 }
 
 .program-content {
@@ -84,18 +168,16 @@
     font-size: 1.3rem;
 }
 
-
+/* Dropdown Accordion */
 .program-content ul li.program-item {
-    padding-left: 0; 
+    padding-left: 0;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Hilangkan panah statis (▸) khusus untuk item dropdown agar tidak double */
 .program-content ul li.program-item::before {
     content: none;
 }
 
-/* Styling Tombol Klik */
 .toggle-btn {
     display: flex;
     justify-content: space-between;
@@ -109,25 +191,22 @@
 }
 
 .toggle-btn:hover {
-    color: #d4af37; /* Warna Emas saat hover */
-    padding-left: 5px; /* Efek geser sedikit */
+    color: #d4af37;
+    padding-left: 5px;
 }
 
-/* Ikon Panah (▼) */
 .toggle-icon {
     font-size: 0.8rem;
     transition: transform 0.3s ease;
     color: #d4af37;
 }
 
-/* Putar panah saat aktif */
 .program-item.active .toggle-icon {
     transform: rotate(180deg);
 }
 
-/* Bagian Penjelasan (Isi Dropdown) */
 .definition {
-    display: none; /* INI PENTING: Sembunyikan konten secara default */
+    display: none;
     padding: 10px 15px;
     margin-bottom: 10px;
     background: #f8f9fa;
@@ -139,13 +218,11 @@
     text-align: left;
 }
 
-/* Tampilkan isi saat class 'active' ditambahkan oleh JS */
 .program-item.active .definition {
     display: block;
     animation: slideDown 0.3s ease-out;
 }
 
-/* Animasi Muncul Halus */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -156,7 +233,6 @@
         transform: translateY(0);
     }
 }
-
 
 /* Schedule Section */
 .schedule-section {
@@ -215,6 +291,66 @@
     border-radius: 8px;
 }
 
+/* ===================================
+   SEJARAH PAGE
+   =================================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: -60px auto 0;
+    padding: 0 5%;
+    position: relative;
+    z-index: 10;
+}
+
+.intro-card {
+    background: white;
+    border-radius: 30px;
+    padding: 4rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+
+.intro-card .quote-mark {
+    font-size: 6rem;
+    color: rgba(10, 25, 41, 0.05);
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.intro-card p {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.intro-card .highlight {
+    background: linear-gradient(120deg, #ffd700 0%, #ffed4e 100%);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #0a1929;
+}
 
 .main-content {
     padding: 60px 20px;
@@ -306,6 +442,179 @@
     opacity: 0.6;
 }
 
+/* Sejarah Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #0a1929, #1e3a5f);
+    border-radius: 10px;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    width: 45%;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a1929;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    z-index: 5;
+}
+
+.timeline-year {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0a1929, #1e3a5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin: 2rem 0 1rem;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.timeline-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 237, 78, 0.1));
+    border-radius: 20px;
+    color: #0a1929;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.value-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover::before {
+    transform: scaleX(1);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: #0a1929;
+}
+
+.value-card h4 {
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin-bottom: 0.8rem;
+}
+
+.value-card p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* ===================================
+   KONTAK PAGE
+   =================================== */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -326,7 +635,13 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: 0.3s;
     border-left: 5px solid #ffd700;
+    animation: fadeInUp 0.6s ease-out backwards;
 }
+
+.info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-card:nth-child(2) { animation-delay: 0.2s; }
+.info-card:nth-child(3) { animation-delay: 0.3s; }
+.info-card:nth-child(4) { animation-delay: 0.4s; }
 
 .info-card:hover {
     transform: translateX(10px);
@@ -374,6 +689,7 @@
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
 }
 
 .form-side::before {
@@ -483,6 +799,9 @@
     color: white;
 }
 
+/* ===================================
+   PENDIDIKAN PAGE
+   =================================== */
 .education-content {
     max-width: 900px;
     margin: 4rem auto;
@@ -566,7 +885,25 @@
     font-weight: 500;
 }
 
+/* ===================================
+   RESPONSIVE - PAGE SPECIFIC
+   =================================== */
 @media (max-width: 768px) {
+    /* Unified Page Headers */
+    .page-header h2,
+    .timeline-hero h1,
+    .edu-hero h1,
+    .vision-hero h1 {
+        font-size: 2rem;
+    }
+
+    .page-header p,
+    .timeline-hero p,
+    .edu-hero p,
+    .vision-hero p {
+        font-size: 1rem;
+    }
+
     /* Program */
     .schedule-item {
         grid-template-columns: 1fr;
@@ -578,6 +915,32 @@
     }
     
     /* Sejarah */
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+        margin-left: 60px;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .timeline-icon {
+        left: 30px;
+    }
+
+    .timeline-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-card {
+        padding: 2rem;
+    }
+    
     .history-card {
         padding: 40px 25px;
     }
@@ -611,18 +974,4 @@
     }
 }
 
-@media (max-width: 600px) {
-    .history-card {
-        padding: 40px 25px;
-    }
-    .page-title {
-        font-size: 32px;
-    }
-    .history-body {
-        font-size: 17px;
-    }
-    .first-letter::first-letter {
-        font-size: 60px;
-        line-height: 50px;
-    }
-}
+
