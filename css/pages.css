@@ -1,0 +1,628 @@
+.page-header {
+    margin-top: 80px;
+    background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+    padding: 4rem 5%;
+    text-align: center;
+    color: white;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.program-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(10, 25, 41, 0.2);
+}
+
+.program-icon {
+    background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.program-content {
+    padding: 2rem;
+}
+
+.program-content h3 {
+    color: #0a1929;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.program-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.program-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.program-content ul li {
+    color: #555;
+    padding: 0.6rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.program-content ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+.program-content ul li.program-item {
+    padding-left: 0; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Hilangkan panah statis (▸) khusus untuk item dropdown agar tidak double */
+.program-content ul li.program-item::before {
+    content: none;
+}
+
+/* Styling Tombol Klik */
+.toggle-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0a1929;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    color: #d4af37; /* Warna Emas saat hover */
+    padding-left: 5px; /* Efek geser sedikit */
+}
+
+/* Ikon Panah (▼) */
+.toggle-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: #d4af37;
+}
+
+/* Putar panah saat aktif */
+.program-item.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Bagian Penjelasan (Isi Dropdown) */
+.definition {
+    display: none; /* INI PENTING: Sembunyikan konten secara default */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-left: 3px solid #ffd700;
+    border-radius: 0 5px 5px 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Tampilkan isi saat class 'active' ditambahkan oleh JS */
+.program-item.active .definition {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Animasi Muncul Halus */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Schedule Section */
+.schedule-section {
+    margin-top: 4rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.schedule-section h3 {
+    color: #0a1929;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 1rem;
+}
+
+.schedule-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 150px 1fr 100px;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 5px solid #ffd700;
+    transition: transform 0.3s;
+    align-items: center;
+}
+
+.schedule-item:hover {
+    transform: translateX(10px);
+    background: linear-gradient(135deg, rgba(10, 25, 41, 0.05) 0%, rgba(30, 58, 95, 0.05) 100%);
+}
+
+.schedule-time {
+    color: #0a1929;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.schedule-activity {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.schedule-image {
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+.main-content {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.history-card {
+    background: #ffffff;
+    max-width: 850px;
+    width: 100%;
+    padding: 80px 60px;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    position: relative;
+    border-top: 8px solid #002d55;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.history-card::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #d4af37;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.page-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d4af37;
+    margin: 15px auto 0;
+}
+
+.history-body {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 2.1;
+    color: #333;
+    text-align: justify;
+}
+
+.first-letter::first-letter {
+    font-family: 'Playfair Display', serif;
+    float: left;
+    font-size: 80px;
+    line-height: 60px;
+    padding-top: 10px;
+    padding-right: 15px;
+    color: #002d55;
+    font-weight: bold;
+}
+
+.history-body p {
+    margin-bottom: 30px;
+}
+
+.history-body strong {
+    color: #002d55;
+    font-weight: 600;
+}
+
+.history-body em {
+    color: #1e3a5f;
+    font-style: italic;
+}
+
+.ornament-footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #d4af37;
+    font-size: 32px;
+    opacity: 0.6;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.info-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-left: 5px solid #ffd700;
+}
+
+.info-card:hover {
+    transform: translateX(10px);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: #1e3a5f;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.info-card h3 {
+    margin-bottom: 0.5rem;
+    color: #0a1929;
+    font-size: 1.3rem;
+}
+
+.info-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #1e3a5f;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+.form-side {
+    background: white;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-side::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #ffd700;
+}
+
+.form-side h2 {
+    margin-bottom: 1rem;
+    color: #0a1929;
+}
+
+.form-side > p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #ffd700;
+    outline: none;
+    background: #fffcf0;
+}
+
+.btn-send {
+    background: #0a1929;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-send:hover {
+    background: #ffd700;
+    color: #0a1929;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
+
+.map-section {
+    margin-top: 4rem;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 8px solid white;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 20px rgba(37,211,102,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background: #20ba5a;
+    color: white;
+}
+
+.education-content {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 5%;
+}
+
+.education-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    border-top: 5px solid #ffd700;
+}
+
+.education-card h3 {
+    color: #0a1929;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.education-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #ffd700;
+}
+
+.education-card h4 {
+    color: #1e3a5f;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.education-card p {
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.education-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.education-card ul li {
+    color: #555;
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.7;
+}
+
+.education-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 237, 78, 0.1) 100%);
+    border-left: 4px solid #ffd700;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+}
+
+.highlight-box p {
+    margin: 0;
+    color: #0a1929;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    /* Program */
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .schedule-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* Sejarah */
+    .history-card {
+        padding: 40px 25px;
+    }
+    
+    .page-title {
+        font-size: 32px;
+    }
+    
+    .history-body {
+        font-size: 17px;
+    }
+    
+    .first-letter::first-letter {
+        font-size: 60px;
+        line-height: 50px;
+    }
+    
+    /* Kontak */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .whatsapp-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Pendidikan */
+    .education-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .history-card {
+        padding: 40px 25px;
+    }
+    .page-title {
+        font-size: 32px;
+    }
+    .history-body {
+        font-size: 17px;
+    }
+    .first-letter::first-letter {
+        font-size: 60px;
+        line-height: 50px;
+    }
+}
