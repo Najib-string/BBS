@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Pondok Pesantren Babussalam</title>
+
+     <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .page-header {
+            margin-top: 80px;
+            background: linear-gradient(rgba(10,25,41,0.9), rgba(10,25,41,0.9)), 
+                        url('https://images.unsplash.com/photo-1542810634-7bc2770ad73a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 5%;
+            text-align: center;
+            color: white;
+        }
+        
+        .page-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .info-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-left: 5px solid #ffd700;
+        }
+        
+        .info-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .info-card i {
+            font-size: 2rem;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .info-card h3 {
+            margin-bottom: 0.5rem;
+            color: #0a1929;
+            font-size: 1.3rem;
+        }
+        
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            color: #1e3a5f;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+        
+        .form-side {
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-side::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #ffd700;
+        }
+        
+        .form-side h2 {
+            margin-bottom: 1rem;
+            color: #0a1929;
+        }
+        
+        .form-side > p {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #ffd700;
+            outline: none;
+            background: #fffcf0;
+        }
+        
+        .btn-send {
+            background: #0a1929;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-send:hover {
+            background: #ffd700;
+            color: #0a1929;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+        
+        .map-section {
+            margin-top: 4rem;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 8px solid white;
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(37,211,102,0.3);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background: #20ba5a;
+            color: white;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #0a1929 0%, #1e3a5f 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="page-kontak">
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">🕌</div>
+            <div class="logo-text">
+                <h1>Pondok Pesantren Babussalam</h1>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+
+            <li class="dropdown">
+                <button class="dropdown-toggle" type="button">
+                    Profil ▾
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="pendidikan.html">Sistem Pendidikan</a></li>
+                    <li><a href="pimpinan.html">Visi & Misi</a></li>
+                </ul>
+            </li>
+
+            <li><a href="program.html">Program</a></li>
+            <li><a href="pendaftaran.html">Pendaftaran</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+</header>    
+
+<div class="page-header">
+    <h2>Hubungi Kami</h2>
+    <p>Silaturahmi adalah kunci keberkahan. Kami menunggu pesan dan kunjungan Anda ke pondok kami.</p>
+</div>
+
+
+<main class="container">
+    <div class="contact-wrapper">
+        <div class="info-side">
+            <div class="info-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Lokasi Utama</h3>
+                <p>Kp. Calingcing Kidul Desa Calingcing, Kec. Sukahening, Kab. Tasikmalaya, Jawa Barat</p>
+            </div>
+
+            <div class="info-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Layanan Informasi</h3>
+                <p>+62 812-3456-7890 (Call Center)<br>+62 812-3456-7891 (Humas)</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>info@babussalam.sch.id<br>admin@babussalam.sch.id</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-share-alt"></i>
+                <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-side">
+            <h2>Kirim Pesan</h2>
+            <p>Silakan isi formulir di bawah ini, admin kami akan segera menghubungi Anda kembali.</p>
+            
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label>Nama Lengkap *</label>
+                    <input type="text" name="nama" placeholder="Contoh: Ahmad Fauzi" required>
+                </div>
+                <div class="form-group">
+                    <label>Alamat Email *</label>
+                    <input type="email" name="email" placeholder="email@anda.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>No. WhatsApp</label>
+                    <input type="tel" name="whatsapp" placeholder="08123456789">
+                </div>
+                <div class="form-group">
+                    <label>Kategori Pertanyaan *</label>
+                    <select name="kategori" required>
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="pendaftaran">Informasi Pendaftaran</option>
+                        <option value="sumbangan">Sumbangan/Infaq</option>
+                        <option value="kerjasama">Kerjasama Akademik</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Pesan Anda *</label>
+                    <textarea name="pesan" rows="4" placeholder="Tuliskan detail pertanyaan Anda..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-send">
+                    <i class="fas fa-paper-plane"></i> KIRIM PESAN SEKARANG
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126651.89824892098!2d108.13523!3d-7.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjEnMDAuMCJTIDEwOMKwMDgnMDYuOCJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            title="Peta Lokasi Pondok Pesantren Babussalam">
+        </iframe>
+    </div>
+</main>
+
+<a href="https://wa.me/6281234567890?text=Assalamualaikum,%20saya%20ingin%20bertanya%20tentang%20Pondok%20Pesantren%20Babussalam" 
+   class="whatsapp-btn" 
+   target="_blank"
+   rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> Tanya via WhatsApp
+</a>
+
+<footer>
+    <p>&copy; 2025 Pondok Pesantren Babussalam. All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript for interactions -->
+<script src="js/main.js"></script>
+    
+</body>
+</html>
