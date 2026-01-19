@@ -221,7 +221,53 @@
     </div>
 </section>
 
+<footer>
+    <p>&copy; 2025 Pondok Pesantren Babussalam. All Rights Reserved.</p>
+</footer>
 
+<!-- JavaScript for interactions -->
+<script src="js/main.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Fix Bootstrap dropdown conflict -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Disable Bootstrap dropdown behavior for navbar
+    const navDropdowns = document.querySelectorAll('.nav-menu .dropdown-toggle');
+    navDropdowns.forEach(toggle => {
+        // Remove Bootstrap data attributes
+        toggle.removeAttribute('data-bs-toggle');
+        toggle.removeAttribute('data-bs-auto-close');
+        
+        // Prevent Bootstrap from handling clicks
+        toggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            const dropdown = this.closest('.dropdown');
+            const isActive = dropdown.classList.contains('active');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.nav-menu .dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('active');
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active', !isActive);
+        });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-menu .dropdown')) {
+            document.querySelectorAll('.nav-menu .dropdown').forEach(d => {
+                d.classList.remove('active');
+            });
+        }
+    });
+});
+</script>
     
 </body>
 </html>
