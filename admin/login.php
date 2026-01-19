@@ -74,10 +74,7 @@ ini_set('display_errors', 1);
 <body>
 
 <div class="login-card">
-
-    <div class="logo-icon">
-         <img src="img/logo.png" alt="Logo Pondok Pesantren Babussalam">   
-    </div>
+    <div class="login-logo">🕌</div>
     <h4 class="login-title">Login Admin</h4>
     <p class="login-subtitle">Pondok Pesantren Babussalam</p>
 
